@@ -33,20 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.speak1:
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (isLoading) {
-                            return;
-                        }
-                        isLoading = true;
-                        TTSBiz.getInstance().getFiles("/mnt/sdcard2/DCIM/LOP/back/");
-                        isLoading = false;
-                    }
-                }).start();
-
-//                TTSBiz.getInstance().setQueueMode(TextToSpeech.QUEUE_FLUSH);
-//                TTSBiz.getInstance().speak1("123456789");
+                TTSBiz.getInstance().setQueueMode(TextToSpeech.QUEUE_FLUSH);
+                TTSBiz.getInstance().speak1("123456789");
                 break;
             case R.id.speak2:
                 TTSBiz.getInstance().setQueueMode(TextToSpeech.QUEUE_ADD);

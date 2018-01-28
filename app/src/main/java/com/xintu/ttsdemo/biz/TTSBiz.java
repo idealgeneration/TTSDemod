@@ -116,6 +116,12 @@ public class TTSBiz implements TextToSpeech.OnInitListener {
         }
     }
 
+    /**
+     * 获取某一路径向所有的文件的大小，与demo无关
+     *
+     * @param dirpath
+     */
+
     public void getFiles(String dirpath) {
         File filedir = new File(dirpath);
         File[] files = filedir.listFiles();
@@ -132,7 +138,12 @@ public class TTSBiz implements TextToSpeech.OnInitListener {
         }
     }
 
-
+    /**
+     * 获取某一文件的大小
+     *
+     * @param url
+     * @return
+     */
     public long getDuration(String url) {
         String duration = null;
         MediaMetadataRetriever retriever = new MediaMetadataRetriever();
